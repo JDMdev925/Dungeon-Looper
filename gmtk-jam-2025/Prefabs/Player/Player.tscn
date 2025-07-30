@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxe4afbmfs3vd"]
+
+[ext_resource type="Script" uid="uid://yyianhk14ivo" path="res://Prefabs/Player/player.gd" id="1_t5con"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5con"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["NoImpact"]]
+scale = Vector2(4, 4)
+script = ExtResource("1_t5con")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["NoImpact"]]
+shape = SubResource("RectangleShape2D_t5con")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(19, 0)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 29.25
+offset_top = 7.0
+offset_right = 35.25
+offset_bottom = 28.0
+rotation = 1.57079
