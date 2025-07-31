@@ -14,6 +14,10 @@ config/name="GMTK Jam 2025"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://Scenes/signal_bus.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -26,6 +30,7 @@ project/assembly_name="GMTK Jam 2025"
 [global_group]
 
 NoImpact="Objects unaffected by bullets"
+Enemies="Group of all enemies"
 
 [input]
 

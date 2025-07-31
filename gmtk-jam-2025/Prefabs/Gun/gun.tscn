@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://i687i8utw4pq"]
+
+[ext_resource type="Script" uid="uid://cepi3v6cq1at3" path="res://Prefabs/Gun/gunscript.gd" id="1_4tyi8"]
+
+[node name="Gun" type="Marker2D"]
+script = ExtResource("1_4tyi8")
+
+[node name="FireRate" type="Timer" parent="."]
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FireRate" to="." method="_on_fire_rate_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

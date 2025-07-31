@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://sweghuyr3pnh"]
+[gd_scene load_steps=7 format=4 uid="uid://sweghuyr3pnh"]
 
 [ext_resource type="Texture2D" uid="uid://hg0me5rww3wl" path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_Scaled.png" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://p7wph17e3q5e" path="res://Scenes/camera_script.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dxe4afbmfs3vd" path="res://Prefabs/Player/Player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b7b1kbo48lshm" path="res://Scenes/spawner.gd" id="4_jjvhh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_8gbba")
@@ -154,5 +155,8 @@ ANCHOR_POINT = Vector2(-960, -1588)
 [node name="Timer" type="Timer" parent="Camera2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("4_jjvhh")
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]

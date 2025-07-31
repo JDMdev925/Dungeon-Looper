@@ -9,5 +9,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("NoImpact"):
 		pass
 	else:
-		print(body.name)
+		#print(body.name)
+		SignalBus.bullet_hit.emit(body)
 		queue_free()

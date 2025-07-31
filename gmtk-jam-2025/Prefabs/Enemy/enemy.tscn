@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://esqqvhvsv3dl"]
+
+[ext_resource type="Script" uid="uid://bqwcqdvq2c444" path="res://Prefabs/Enemy/enemy.gd" id="1_rd3ho"]
+[ext_resource type="PackedScene" uid="uid://i687i8utw4pq" path="res://Prefabs/Gun/gun.tscn" id="2_d3elq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35c02"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rd3ho"]
+radius = 70.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3elq"]
+radius = 26.3418
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(6, 6)
+script = ExtResource("1_rd3ho")
+
+[node name="EnemyCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_35c02")
+
+[node name="Gun" parent="." instance=ExtResource("2_d3elq")]
+position = Vector2(14.1667, 0)
+RateOfFire = 0.5
+ReloadSpeed = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -8.0
+offset_right = 7.0
+offset_bottom = 7.0
+color = Color(0.68737, 0.231787, 3.85046e-07, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 21.0
+offset_bottom = 10.0
+color = Color(0.686275, 0.231373, 0, 1)
+
+[node name="PlayerSphere" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSphere"]
+shape = SubResource("CircleShape2D_rd3ho")
+debug_color = Color(0.883765, 0.318338, 0.270299, 0.42)
+
+[node name="EnemySphere" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySphere"]
+shape = SubResource("CircleShape2D_d3elq")
+debug_color = Color(0.672736, 0.505349, 0.135675, 0.42)
+
+[connection signal="body_entered" from="PlayerSphere" to="." method="_on_player_sphere_body_entered"]
+[connection signal="body_exited" from="PlayerSphere" to="." method="_on_player_sphere_body_exited"]
+[connection signal="body_entered" from="EnemySphere" to="." method="_on_enemy_sphere_body_entered"]
+[connection signal="body_exited" from="EnemySphere" to="." method="_on_enemy_sphere_body_exited"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf00w6k8gjg3b"]
+
+[ext_resource type="Script" uid="uid://ncaukx6i0eqr" path="res://Prefabs/Bullet/p_bullet.gd" id="1_uhy41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4uay"]
+size = Vector2(4, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_704ok"]
+size = Vector2(32, 8)
+
+[node name="P_Bullet" type="CharacterBody2D" groups=["NoImpact"]]
+scale = Vector2(2, 1.02)
+script = ExtResource("1_uhy41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f4uay")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.12, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_704ok")
+debug_color = Color(0.899806, 0.284306, 0.342469, 0.42)
+
+[node name="ColorRect" type="ColorRect" parent="Area2D/CollisionShape2D"]
+offset_left = -16.0
+offset_top = -4.0
+offset_right = 16.0
+offset_bottom = 4.0
+color = Color(0.818027, 0.731595, 2.69532e-06, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

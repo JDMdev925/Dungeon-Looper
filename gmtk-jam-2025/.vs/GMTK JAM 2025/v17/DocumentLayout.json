@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|f:\\users\\joemc\\documents\\github\\dungeon-looper\\gmtk-jam-2025\\prefabs\\gun\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|solutionrelative:prefabs\\gun\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|f:\\users\\joemc\\documents\\github\\dungeon-looper\\gmtk-jam-2025\\prefabs\\grid\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|solutionrelative:prefabs\\grid\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|f:\\users\\joemc\\documents\\github\\dungeon-looper\\gmtk-jam-2025\\prefabs\\grid\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|solutionrelative:prefabs\\grid\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|f:\\users\\joemc\\documents\\github\\dungeon-looper\\gmtk-jam-2025\\prefabs\\gun\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{30EA7820-451A-4618-964A-AAA04730FBE0}|GMTK Jam 2025.csproj|solutionrelative:prefabs\\gun\\gun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\Prefabs\\Grid\\Cell.cs",
+              "RelativeDocumentMoniker": "Prefabs\\Grid\\Cell.cs",
+              "ToolTip": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\Prefabs\\Grid\\Cell.cs",
+              "RelativeToolTip": "Prefabs\\Grid\\Cell.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T21:33:29.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Gun.cs",
               "DocumentMoniker": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\Prefabs\\Gun\\Gun.cs",
               "RelativeDocumentMoniker": "Prefabs\\Gun\\Gun.cs",
               "ToolTip": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\Prefabs\\Gun\\Gun.cs",
               "RelativeToolTip": "Prefabs\\Gun\\Gun.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T20:44:04.66Z",
               "EditorCaption": ""
@@ -41,9 +58,10 @@
               "RelativeDocumentMoniker": "Prefabs\\Grid\\Grid.cs",
               "ToolTip": "F:\\Users\\joemc\\Documents\\GitHub\\Dungeon-Looper\\gmtk-jam-2025\\Prefabs\\Grid\\Grid.cs",
               "RelativeToolTip": "Prefabs\\Grid\\Grid.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T20:20:37.401Z"
+              "WhenOpened": "2025-07-30T20:20:37.401Z",
+              "EditorCaption": ""
             }
           ]
         }
