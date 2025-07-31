@@ -4,15 +4,20 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5con"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["NoImpact"]]
+[node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(4, 4)
 script = ExtResource("1_t5con")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["NoImpact"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_t5con")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(19, 0)
+
+[node name="FireRate" type="Timer" parent="Marker2D"]
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="Marker2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -10.0
@@ -27,3 +32,6 @@ offset_top = 7.0
 offset_right = 35.25
 offset_bottom = 28.0
 rotation = 1.57079
+
+[connection signal="timeout" from="Marker2D/FireRate" to="." method="_on_fire_rate_timeout"]
+[connection signal="timeout" from="Marker2D/Cooldown" to="." method="_on_cooldown_timeout"]

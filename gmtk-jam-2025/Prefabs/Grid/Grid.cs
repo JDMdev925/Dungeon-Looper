@@ -11,7 +11,7 @@ public partial class Grid : GodotObject {
 	public List<Cell> cells = new List<Cell>();
 	
 	public Grid(Vector2 ANCHORPOINT, Vector2 CELLSIZE, int ROW, int COL){
-		
+
 		AnchorPoint = ANCHORPOINT;
 		MaxRow = ROW;
 		MaxColumn = COL;

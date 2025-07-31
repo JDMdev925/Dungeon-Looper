@@ -40,7 +40,6 @@ func IdentifyNewCell(current: int) -> int:
 		current -= TOTAL_ROWS
 	else:
 		pass
-	print(current)
 	if current > CameraGrid.GridSize:
 		current = HoldCell
 
@@ -58,6 +57,7 @@ func MoveToNewCell() -> void:
 func _ready() -> void:
 	CameraGrid = Grid.new(ANCHOR_POINT, CELL_SIZE, TOTAL_ROWS, TOTAL_COLLUMNS)
 	CurrentCell = STARTING_CELL
+	global_position = CameraGrid.GetCell(STARTING_CELL).Centre
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -77,4 +77,3 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	transition = false
-	print("reset")
