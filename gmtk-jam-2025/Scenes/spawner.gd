@@ -17,6 +17,6 @@ func SpawnEnemies(NextCell : int, Total : int) -> void:
 		var pos_y = rng.randf_range(InvGrid.GetCell(NextCell).TopLeft.y + 50, InvGrid.GetCell(NextCell).BottomRight.y - 50)
 		var enemy = Enemy.instantiate()
 		set_owner(get_tree().get_root().get_child(1))
-		owner.add_child(enemy)
+		get_tree().current_scene.call_deferred("add_child", enemy)
 		enemy.global_position = Vector2(pos_x, pos_y)
 		print("Enemy Spawned: ", enemy.global_position)

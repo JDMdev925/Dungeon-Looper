@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://sweghuyr3pnh"]
+[gd_scene load_steps=10 format=4 uid="uid://sweghuyr3pnh"]
 
 [ext_resource type="Texture2D" uid="uid://hg0me5rww3wl" path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_Scaled.png" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://p7wph17e3q5e" path="res://Scenes/camera_script.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dxe4afbmfs3vd" path="res://Prefabs/Player/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b7b1kbo48lshm" path="res://Scenes/spawner.gd" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://c3jl6v5464c2l" path="res://Prefabs/Gate/gate.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://esqqvhvsv3dl" path="res://Prefabs/Enemy/enemy.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dv7sp3esn878w" path="res://Scenes/HUD/hud.tscn" id="7_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_8gbba")
@@ -153,10 +156,33 @@ STARTING_CELL = 2
 ANCHOR_POINT = Vector2(-960, -1588)
 
 [node name="Timer" type="Timer" parent="Camera2D"]
+one_shot = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_jjgbg")]
 
 [node name="Spawner" type="Node2D" parent="."]
 script = ExtResource("4_jjvhh")
+
+[node name="Gate" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(-2, -512)
+
+[node name="Gate2" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1928, -508)
+Room = 3
+
+[node name="Gate3" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1026, -1031)
+rotation = 1.57079
+Room = 1
+
+[node name="Gate4" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(1026, 128)
+rotation = 1.57079
+Room = 2
+
+[node name="Enemy" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(-641, -187)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_6bp64")]
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]

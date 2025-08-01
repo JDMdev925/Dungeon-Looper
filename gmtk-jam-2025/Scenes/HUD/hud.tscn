@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv7sp3esn878w"]
+
+[ext_resource type="Texture2D" uid="uid://ce3bpesayq6xs" path="res://Assets/Hud Assets/Under.png" id="1_5aai8"]
+[ext_resource type="Script" uid="uid://nc6milbg0o5j" path="res://Scenes/HUD/hudscript.gd" id="1_a56j6"]
+[ext_resource type="Texture2D" uid="uid://cswax36ke6yxp" path="res://Assets/Hud Assets/Progress.png" id="2_a56j6"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_a56j6")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 59.0
+offset_top = 769.0
+offset_right = 315.0
+offset_bottom = 1025.0
+fill_mode = 5
+texture_under = ExtResource("1_5aai8")
+texture_progress = ExtResource("2_a56j6")
+tint_under = Color(0.00392157, 0.00392157, 0.00392157, 0.278431)
+
+[node name="Timer" type="Timer" parent="TextureProgressBar"]
+
+[node name="TextEdit" type="TextEdit" parent="TextureProgressBar"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 32.0
+offset_right = 168.0
+offset_bottom = 221.0
+theme_override_colors/background_color = Color(0.0177324, 0.0177324, 0.0177324, 0)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 128
+text = "0"
+
+[connection signal="timeout" from="TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

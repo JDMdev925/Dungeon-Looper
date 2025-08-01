@@ -19,7 +19,7 @@ func on_shoot(mode: int) -> void:
 	if Gun.Mag > 0:
 		if $FireRate.time_left == 0:
 			$FireRate.start(Gun.ROF)
-			#print("fire")
+			print("fire")
 		else:
 			pass
 	else:
@@ -33,6 +33,7 @@ func on_shoot(mode: int) -> void:
 func reload() -> void:
 	$Cooldown.start(Gun.CoolDown)
 	Reloading = true
+	SignalBus.gunshot.emit(Gun.CoolDown, 0)
 
 
 func _on_fire_rate_timeout() -> void:
@@ -41,6 +42,7 @@ func _on_fire_rate_timeout() -> void:
 		var bullet
 		if type == 0:
 			bullet = Bullet.instantiate()
+			SignalBus.gunshot.emit(0, Gun.Mag - 1)
 		else:
 			bullet = P_Bullet.instantiate()
 		set_owner(get_tree().get_root().get_child(1))
@@ -53,5 +55,6 @@ func _on_fire_rate_timeout() -> void:
 
 func _on_cooldown_timeout() -> void:
 	Gun.Mag = Gun.MagSize
+	SignalBus.gunshot.emit(0, Gun.Mag)
 	print("reloaded")
 	Reloading = false

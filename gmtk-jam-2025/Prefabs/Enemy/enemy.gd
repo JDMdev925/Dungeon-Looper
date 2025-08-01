@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 
 func _on_bullet_hit(target: Node2D) -> void:
 	if target == self:
+		SignalBus.enemy_hit.emit()
 		queue_free()
 
 func _on_player_sphere_body_entered(body: Node2D) -> void:

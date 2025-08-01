@@ -22,7 +22,7 @@ func Movement() -> void:
 
 func _on_bullet_hit(target : Node2D) -> void:
 	if target == self:
-		print("PLAYER")
+		SignalBus.player_hit.emit()
 
 func _ready() -> void:
 	SignalBus.p_bullet_hit.connect(_on_bullet_hit)
