@@ -173,15 +173,18 @@ Room = 3
 [node name="Gate3" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(1026, -1031)
 rotation = 1.57079
+Alignment = 1
 Room = 1
 
 [node name="Gate4" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(1026, 128)
 rotation = 1.57079
+Alignment = 1
 Room = 2
 
 [node name="Enemy" parent="." instance=ExtResource("6_21xkr")]
 position = Vector2(-641, -187)
+active = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_6bp64")]
 

@@ -9,7 +9,7 @@ size = Vector2(4, 8)
 size = Vector2(32, 8)
 
 [node name="Bullet" type="CharacterBody2D" groups=["NoImpact"]]
-scale = Vector2(2, 1.02)
+scale = Vector2(4, 2.04)
 script = ExtResource("1_f4uay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

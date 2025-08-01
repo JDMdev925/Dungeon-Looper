@@ -20,7 +20,7 @@ shape = SubResource("CircleShape2D_35c02")
 
 [node name="Gun" parent="." instance=ExtResource("2_d3elq")]
 position = Vector2(14.1667, 0)
-RateOfFire = 0.5
+RateOfFire = 1.0
 ReloadSpeed = 2.0
 
 [node name="ColorRect" type="ColorRect" parent="."]

@@ -69,6 +69,7 @@ func _process(delta: float) -> void:
 		if BufferCell != CurrentCell:
 			$Timer.start(1)
 			SignalBus.UpdateGrid(CurrentCell)
+			SignalBus.enemy_activate.emit()
 			transition = true
 	elif transition == true:
 		MoveToNewCell()

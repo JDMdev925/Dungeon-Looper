@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dv7sp3esn878w"]
+[gd_scene load_steps=7 format=3 uid="uid://dv7sp3esn878w"]
 
 [ext_resource type="Texture2D" uid="uid://ce3bpesayq6xs" path="res://Assets/Hud Assets/Under.png" id="1_5aai8"]
 [ext_resource type="Script" uid="uid://nc6milbg0o5j" path="res://Scenes/HUD/hudscript.gd" id="1_a56j6"]
 [ext_resource type="Texture2D" uid="uid://cswax36ke6yxp" path="res://Assets/Hud Assets/Progress.png" id="2_a56j6"]
+[ext_resource type="Texture2D" uid="uid://cf0vqnl24ryd2" path="res://Assets/Horizontal Half heart sets/16x16 Heart Health Red Horizontal.png" id="4_k83ni"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a56j6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_k83ni"]
+LineEdit/font_sizes/font_size = 128
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_a56j6")
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_a56j6")
@@ -19,15 +27,52 @@ tint_under = Color(0.00392157, 0.00392157, 0.00392157, 0.278431)
 
 [node name="Timer" type="Timer" parent="TextureProgressBar"]
 
-[node name="TextEdit" type="TextEdit" parent="TextureProgressBar"]
-layout_mode = 0
-offset_left = 87.0
+[node name="LineEdit" type="LineEdit" parent="TextureProgressBar"]
+offset_left = -116.0
+offset_top = 27.0
+offset_right = 376.0
+offset_bottom = 225.0
+theme = SubResource("Theme_k83ni")
+text = "10"
+alignment = 1
+editable = false
+
+[node name="Health" type="Node2D" parent="."]
+
+[node name="H1" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(115, 81)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_k83ni")
+hframes = 3
+
+[node name="H2" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(219, 81)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_k83ni")
+hframes = 3
+
+[node name="H3" type="Sprite2D" parent="Health"]
+texture_filter = 1
+position = Vector2(321, 81)
+scale = Vector2(6.1875, 6.1875)
+texture = ExtResource("4_k83ni")
+hframes = 3
+
+[node name="Stopwatch" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -370.0
 offset_top = 32.0
-offset_right = 168.0
-offset_bottom = 221.0
-theme_override_colors/background_color = Color(0.0177324, 0.0177324, 0.0177324, 0)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 0)
-theme_override_font_sizes/font_size = 128
-text = "0"
+offset_right = -39.0
+offset_bottom = 120.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "00:00:000"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="TextureProgressBar/Timer" to="." method="_on_timer_timeout"]
