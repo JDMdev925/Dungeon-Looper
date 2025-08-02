@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://6sndstjgbn08"]
+[gd_scene load_steps=4 format=3 uid="uid://6sndstjgbn08"]
+
+[ext_resource type="Script" uid="uid://cnenguv8v82p2" path="res://Scenes/GameOver/go_script.gd" id="1_co53d"]
+[ext_resource type="Theme" uid="uid://cag8whn2jfmuu" path="res://Scenes/HUD/line_edit.tres" id="1_kbe1p"]
+[ext_resource type="Theme" uid="uid://bwlj4s55ss8gc" path="res://Scenes/Menu/button_theme.tres" id="3_gaimk"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_co53d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -16,13 +21,35 @@ offset_left = -962.0
 offset_top = -539.0
 offset_right = 961.0
 offset_bottom = 538.0
-color = Color(0, 0, 0, 1)
+color = Color(0.239216, 0.145098, 0.231373, 1)
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = -257.0
-offset_top = -271.0
-offset_right = -148.0
-offset_bottom = -231.0
-scale = Vector2(4.9545, 4.9545)
-text = "GAME OVER"
+offset_left = -345.0
+offset_top = -272.0
+offset_right = 348.0
+offset_bottom = -105.0
+theme = ExtResource("1_kbe1p")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+text = "Game Over"
+editable = false
+selecting_enabled = false
+
+[node name="Button" type="Button" parent="LineEdit"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.5
+offset_top = 155.5
+offset_right = 294.5
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_gaimk")
+text = "Main Menu"
+
+[connection signal="pressed" from="LineEdit/Button" to="." method="_on_button_pressed"]

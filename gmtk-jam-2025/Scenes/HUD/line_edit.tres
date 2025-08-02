@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cag8whn2jfmuu"]
+
+[ext_resource type="FontFile" uid="uid://u22qro4tx36m" path="res://Assets/fonts/PixelifySans-VariableFont_wght.ttf" id="1_hv2o7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k83ni"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a56j6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 0)
+LineEdit/colors/selection_color = Color(0.501961, 0.501961, 0.501961, 0)
+LineEdit/font_sizes/font_size = 132
+LineEdit/fonts/font = ExtResource("1_hv2o7")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_k83ni")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_a56j6")
