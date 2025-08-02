@@ -7,6 +7,7 @@ var time : float = 0
 func _ready() -> void:
 	SignalBus.gunshot.connect(UpdateHud)
 	SignalBus.player_hit.connect(ReduceHearts)
+	SignalBus.gain_life.connect(IncreaseHearts)
 	$TextureProgressBar.value = 100
 
 
@@ -21,11 +22,20 @@ func UpdateHud(reload : float, mag : int) -> void:
 		#print("VALUE", mag)
 
 func ReduceHearts() -> void:
+	if hearts < 0:
+		hearts = 0
 	var Sprite : Sprite2D = $Health.get_child(hearts)
 	Sprite.frame = 2
 	hearts -= 1
-	if hearts < 0:
-		hearts = 0
+
+func IncreaseHearts() -> void:
+	if hearts >= 2:
+		hearts = 2
+	else:
+		hearts += 1
+	var Sprite : Sprite2D = $Health.get_child(hearts)
+	Sprite.frame = 0
+
 
 
 func _process(delta: float) -> void:

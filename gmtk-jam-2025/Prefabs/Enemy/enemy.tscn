@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://esqqvhvsv3dl"]
+[gd_scene load_steps=7 format=3 uid="uid://esqqvhvsv3dl"]
 
 [ext_resource type="Script" uid="uid://bqwcqdvq2c444" path="res://Prefabs/Enemy/enemy.gd" id="1_rd3ho"]
 [ext_resource type="PackedScene" uid="uid://i687i8utw4pq" path="res://Prefabs/Gun/gun.tscn" id="2_d3elq"]
+[ext_resource type="Texture2D" uid="uid://csjhpuu3cpl1k" path="res://Assets/Characters/DL-Enemy.png" id="3_ysj48"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_35c02"]
 
@@ -12,43 +13,36 @@ radius = 70.5
 radius = 26.3418
 
 [node name="Enemy" type="CharacterBody2D"]
-scale = Vector2(6, 6)
+scale = Vector2(4, 4)
 script = ExtResource("1_rd3ho")
 
 [node name="EnemyCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_35c02")
 
 [node name="Gun" parent="." instance=ExtResource("2_d3elq")]
-position = Vector2(14.1667, 0)
+position = Vector2(19.6667, 0)
 RateOfFire = 1.0
 ReloadSpeed = 2.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -7.0
-offset_top = -8.0
-offset_right = 7.0
-offset_bottom = 7.0
-color = Color(0.68737, 0.231787, 3.85046e-07, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 6.0
-offset_right = 21.0
-offset_bottom = 10.0
-color = Color(0.686275, 0.231373, 0, 1)
-
 [node name="PlayerSphere" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSphere"]
 shape = SubResource("CircleShape2D_rd3ho")
 debug_color = Color(0.883765, 0.318338, 0.270299, 0.42)
 
 [node name="EnemySphere" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySphere"]
 shape = SubResource("CircleShape2D_d3elq")
 debug_color = Color(0.672736, 0.505349, 0.135675, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5, 2.98023e-08)
+scale = Vector2(0.610677, 0.610677)
+texture = ExtResource("3_ysj48")
 
 [connection signal="body_entered" from="PlayerSphere" to="." method="_on_player_sphere_body_entered"]
 [connection signal="body_exited" from="PlayerSphere" to="." method="_on_player_sphere_body_exited"]

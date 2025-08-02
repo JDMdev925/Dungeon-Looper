@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfwgcl5i2lgka"
+path="res://.godot/imported/bg-1.wav-b8c72406fa9bea9ac3fbc63dbb062848.sample"
+
+[deps]
+
+source_file="res://Assets/Hud Assets/bg-1.wav"
+dest_files=["res://.godot/imported/bg-1.wav-b8c72406fa9bea9ac3fbc63dbb062848.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

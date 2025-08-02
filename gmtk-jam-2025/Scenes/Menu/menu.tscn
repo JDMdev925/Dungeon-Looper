@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvqu6dh8e6apx"]
+[gd_scene load_steps=6 format=3 uid="uid://dvqu6dh8e6apx"]
 
 [ext_resource type="Script" uid="uid://c12mbv07vu154" path="res://Scenes/Menu/menuscript.gd" id="1_3qr6s"]
 [ext_resource type="Theme" uid="uid://cag8whn2jfmuu" path="res://Scenes/HUD/line_edit.tres" id="1_cqskg"]
 [ext_resource type="FontFile" uid="uid://u22qro4tx36m" path="res://Assets/fonts/PixelifySans-VariableFont_wght.ttf" id="2_3ymnh"]
 [ext_resource type="Theme" uid="uid://bwlj4s55ss8gc" path="res://Scenes/Menu/button_theme.tres" id="4_j7r1e"]
+[ext_resource type="AudioStream" uid="uid://cfwgcl5i2lgka" path="res://Assets/Hud Assets/bg-1.wav" id="5_8inha"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_3qr6s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -2.0
 offset_right = 1921.0
 offset_bottom = 1080.0
@@ -102,8 +104,11 @@ text = "CREDITS
 -------------------------------------
 Dungeon Tileset : PixelPoem
 
-Heart containers : Redreeh
-"
+Heart containers : 
+Redreeh
+
+Music & SoundFX : 
+Pixabay"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -126,6 +131,10 @@ texture_filter = 1
 layout_mode = 2
 theme = ExtResource("4_j7r1e")
 text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8inha")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

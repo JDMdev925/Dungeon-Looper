@@ -50,6 +50,7 @@ func _on_fire_rate_timeout() -> void:
 		bullet.position = global_position
 		bullet.rotation = global_rotation
 	Gun.Mag -= 1
+	$AudioStreamPlayer2D.play()
 	$Cooldown.stop()
 
 

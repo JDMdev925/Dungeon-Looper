@@ -24,8 +24,13 @@ func _on_bullet_hit(target : Node2D) -> void:
 	if target == self:
 		SignalBus.player_hit.emit()
 
+func _on_health_hit(target : Node2D) -> void:
+	if target == self:
+		SignalBus.gain_life.emit()
+
 func _ready() -> void:
 	SignalBus.p_bullet_hit.connect(_on_bullet_hit)
+	SignalBus.heart_hit.connect(_on_health_hit)
 
 func _physics_process(delta: float) -> void:
 	look_at(get_global_mouse_position())

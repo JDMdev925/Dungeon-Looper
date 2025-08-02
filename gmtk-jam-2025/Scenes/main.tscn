@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://sweghuyr3pnh"]
+[gd_scene load_steps=11 format=4 uid="uid://sweghuyr3pnh"]
 
 [ext_resource type="Texture2D" uid="uid://hg0me5rww3wl" path="res://Assets/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset_Scaled.png" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://p7wph17e3q5e" path="res://Scenes/camera_script.gd" id="1_bo1nx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3jl6v5464c2l" path="res://Prefabs/Gate/gate.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://esqqvhvsv3dl" path="res://Prefabs/Enemy/enemy.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://dv7sp3esn878w" path="res://Scenes/HUD/hud.tscn" id="7_6bp64"]
+[ext_resource type="AudioStream" uid="uid://c81lr1ghttr3s" path="res://Assets/Hud Assets/bg-2.wav" id="8_344ge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_8gbba")
@@ -187,5 +188,10 @@ position = Vector2(-641, -187)
 active = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource("7_6bp64")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_344ge")
+volume_db = -15.928
+autoplay = true
 
 [connection signal="timeout" from="Camera2D/Timer" to="Camera2D" method="_on_timer_timeout"]

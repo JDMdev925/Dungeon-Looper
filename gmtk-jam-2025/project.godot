@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="GMTK Jam 2025"
+config/name="Dungeon Looper (GMTK2025)"
+config/version="1.0"
+run/main_scene="uid://dvqu6dh8e6apx"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cgv0p7u3jmgrv"
 
 [autoload]
 

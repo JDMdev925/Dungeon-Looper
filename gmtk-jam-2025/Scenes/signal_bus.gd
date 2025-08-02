@@ -3,6 +3,9 @@ extends Node
 signal bullet_hit(target : Node2D)
 signal p_bullet_hit(target : Node2D)
 signal player_hit()
+signal heart_hit(target : Node2D)
+signal gain_life()
+signal reset()
 signal gunshot(reload : float, mag : int)
 signal enemy_hit()
 signal enemy_activate()
@@ -21,6 +24,10 @@ func LoseLife() -> void:
 	PlayerHealth -= 1
 	if PlayerHealth <= 0:
 		get_tree().change_scene_to_file.call_deferred("res://Scenes/GameOver/GOScreen.tscn")
+
+func GainLife() -> void:
+	if PlayerHealth < 4:
+		PlayerHealth += 1
 
 func EnemyKilled() -> void:
 	EnemyCount -= 1
@@ -50,10 +57,13 @@ func UpdateGrid(cellnum : int):
 		_:
 			NextCell = 0
 
-
+func Reset():
+	PlayerHealth = 4
 
 func _ready() -> void:
 	player_hit.connect(LoseLife)
 	enemy_hit.connect(EnemyKilled)
 	update_grid.connect(UpdateGrid)
+	gain_life.connect(GainLife)
+	reset.connect(Reset)
 	NextCell = 0
