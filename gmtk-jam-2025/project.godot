@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dungeon Looper (GMTK2025)"
-config/version="1.0"
+config/version="1.1"
 run/main_scene="uid://dvqu6dh8e6apx"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
 config/icon="uid://cgv0p7u3jmgrv"
@@ -24,6 +24,10 @@ SignalBus="*res://Scenes/signal_bus.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="uid://ce8vsyluchmpt"
 mouse_cursor/custom_image_hotspot=Vector2(18, 18)
 

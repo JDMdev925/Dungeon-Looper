@@ -18,6 +18,7 @@ var PlayerBottomRight : Vector2
 var transition : bool = false
 
 func SmoothInterpolate(progress: float) -> float:
+	progress *= 0.5
 	if progress < 0.5:
 		progress = 8 * progress * progress * progress
 	else:
@@ -45,13 +46,13 @@ func IdentifyNewCell(current: int) -> int:
 
 	return current
 
-func MoveToNewCell() -> void: 
+func MoveToNewCell(delta: float) -> void: 
 	var point : float = 0.0
 	if MOTION_TYPE == "Smooth":
 		point = SmoothInterpolate(1 - $Timer.time_left)
 	else:
 		point = 1 - $Timer.time_left
-	global_position = LERP(global_position, CameraGrid.GetCell(CurrentCell).Centre, point * 0.05)
+	global_position = LERP(global_position, CameraGrid.GetCell(CurrentCell).Centre, point)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -72,7 +73,7 @@ func _process(delta: float) -> void:
 			SignalBus.enemy_activate.emit()
 			transition = true
 	elif transition == true:
-		MoveToNewCell()
+		MoveToNewCell(delta)
 		
 	
 	
