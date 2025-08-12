@@ -16,7 +16,7 @@ signal gate_command(gate: Node2D, state: int)
 var gate_dict : Dictionary[int, Node2D] = {}
 var NextCell : int
 var PlayerHealth : int = 4
-var EnemyCount : int  = 0
+var EnemyCount : int = 1
 var Level : int = 1
 var Progress : int = 0
 
@@ -31,6 +31,7 @@ func GainLife() -> void:
 
 func EnemyKilled() -> void:
 	EnemyCount -= 1
+	print("ENEMY COUNT: ", EnemyCount)
 	if EnemyCount <= 0:
 		UpdateDifficulty()
 		gate_command.emit(gate_dict[NextCell], 0)
@@ -58,7 +59,11 @@ func UpdateGrid(cellnum : int):
 			NextCell = 0
 
 func Reset():
+	NextCell = 0
 	PlayerHealth = 4
+	EnemyCount = 1
+	Level = 1
+	Progress = 0
 
 func _ready() -> void:
 	player_hit.connect(LoseLife)
@@ -66,4 +71,3 @@ func _ready() -> void:
 	update_grid.connect(UpdateGrid)
 	gain_life.connect(GainLife)
 	reset.connect(Reset)
-	NextCell = 0

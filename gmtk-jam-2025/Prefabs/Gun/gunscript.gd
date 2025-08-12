@@ -19,13 +19,13 @@ func on_shoot(mode: int) -> void:
 	if Gun.Mag > 0:
 		if $FireRate.time_left == 0:
 			$FireRate.start(Gun.ROF)
-			print("fire")
+			#print("fire")
 		else:
 			pass
 	else:
 		if Reloading == false:
 			reload()
-			print("reloading")
+			#print("reloading")
 		else:
 			pass
 
@@ -57,5 +57,5 @@ func _on_fire_rate_timeout() -> void:
 func _on_cooldown_timeout() -> void:
 	Gun.Mag = Gun.MagSize
 	SignalBus.gunshot.emit(0, Gun.Mag)
-	print("reloaded")
+	#print("reloaded")
 	Reloading = false

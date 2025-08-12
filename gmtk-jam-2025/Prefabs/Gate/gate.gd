@@ -27,14 +27,14 @@ func ChangeState() -> void:
 		elif Alignment == ALIGNMENT.VERTICAL:
 			$Sprite2D.frame = 3
 		$CollisionShape2D.set_deferred("disabled", true)
-		print("open")
+		#print("open")
 	elif State == STATE.CLOSE:
 		if Alignment == ALIGNMENT.HORIZONTAL:
 			$Sprite2D.frame = 0
 		elif Alignment == ALIGNMENT.VERTICAL:
 			$Sprite2D.frame = 2
 		$CollisionShape2D.disabled = false
-		print("close")
+		#print("close")
 	
 
 

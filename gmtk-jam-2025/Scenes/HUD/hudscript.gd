@@ -35,6 +35,7 @@ func IncreaseHearts() -> void:
 		hearts += 1
 	var Sprite : Sprite2D = $Health.get_child(hearts)
 	Sprite.frame = 0
+	$HeartGainSFX.play()
 
 
 
@@ -48,10 +49,10 @@ func _process(delta: float) -> void:
 func UpdateStopwatch() -> void:
 	var msec = fmod(time, 1) * 1000
 	var sec = fmod(time, 60)
-	var min = time / 60
+	var mmin = time / 60
 	
 	var format = "%02d : %02d : %03d"
-	$Stopwatch.text = format % [min, sec, msec]
+	$Stopwatch.text = format % [mmin, sec, msec]
 
 func _on_timer_timeout() -> void:
 	reloading = false
