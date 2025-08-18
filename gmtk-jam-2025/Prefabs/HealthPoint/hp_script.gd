@@ -15,4 +15,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		pass
 	else:
 		SignalBus.heart_hit.emit(body)
+		if trigger == false:
+			SignalBus.enemy_hit.emit()
 		queue_free()

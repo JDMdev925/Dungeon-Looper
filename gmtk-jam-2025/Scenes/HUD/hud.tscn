@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv7sp3esn878w"]
+[gd_scene load_steps=8 format=3 uid="uid://dv7sp3esn878w"]
 
 [ext_resource type="Texture2D" uid="uid://ce3bpesayq6xs" path="res://Assets/Hud Assets/Under.png" id="1_5aai8"]
 [ext_resource type="Script" uid="uid://nc6milbg0o5j" path="res://Scenes/HUD/hudscript.gd" id="1_a56j6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cag8whn2jfmuu" path="res://Scenes/HUD/line_edit.tres" id="4_6pkbx"]
 [ext_resource type="Texture2D" uid="uid://cf0vqnl24ryd2" path="res://Assets/Horizontal Half heart sets/16x16 Heart Health Red Horizontal.png" id="4_k83ni"]
 [ext_resource type="AudioStream" uid="uid://dkjcbl2lyt0g2" path="res://Assets/Hud Assets/coin-pickup-98269.mp3" id="6_8wqxc"]
+[ext_resource type="AudioStream" uid="uid://csgxpgl0k6yk4" path="res://Assets/Hud Assets/m4a1-reload-sound-316890.mp3" id="7_1owdh"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_a56j6")
@@ -77,5 +78,9 @@ horizontal_alignment = 1
 
 [node name="HeartGainSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8wqxc")
+
+[node name="GunReloadSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1owdh")
+volume_db = 3.748
 
 [connection signal="timeout" from="TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

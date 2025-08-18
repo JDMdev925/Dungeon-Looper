@@ -16,6 +16,7 @@ func UpdateHud(reload : float, mag : int) -> void:
 		$TextureProgressBar/Timer.start(reload)
 		$TextureProgressBar/LineEdit.text = "R"
 		reloading = true
+		$GunReloadSFX.play()
 	else:
 		$TextureProgressBar.value = (mag * 10)
 		$TextureProgressBar/LineEdit.text = str(mag)
@@ -56,3 +57,4 @@ func UpdateStopwatch() -> void:
 
 func _on_timer_timeout() -> void:
 	reloading = false
+	$GunReloadSFX.stop()
